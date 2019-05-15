@@ -1,14 +1,7 @@
 static-pages:
-    index:
-        home-home-1: {  }
-        home-home-2: {  }
+    index: {  }
     pages:
-        pages-about-us: {  }
         pages-abous-us-2: {  }
-        pages-services: {  }
-        pages-services-2: {  }
-        pages-pricing: {  }
-        pages-team: {  }
     portfolio:
         portfolio-portfolio-2-columns: {  }
         portfolio-portfolio-3-columns: {  }

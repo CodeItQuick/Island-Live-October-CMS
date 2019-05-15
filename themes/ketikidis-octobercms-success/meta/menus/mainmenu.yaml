@@ -2,38 +2,32 @@ name: 'Main Menu'
 items:
     -
         title: Home
-        nesting: '1'
+        nesting: '0'
         type: static-page
-        url: ''
         code: ''
         reference: index
-        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Pages
-        nesting: '1'
+        title: 'About Us'
+        nesting: '0'
         type: static-page
-        url: ''
         code: ''
-        reference: pages
-        cmsPage: ''
+        reference: pages-abous-us-2
         replace: '0'
         viewBag:
-            isHidden: '0'
+            isHidden: '1'
             cssClass: ''
             isExternal: '0'
     -
         title: Portfolio
-        nesting: '1'
+        nesting: '0'
         type: static-page
-        url: ''
         code: ''
-        reference: portfolio
-        cmsPage: ''
+        reference: portfolio-portfolio-2-columns
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -54,12 +48,10 @@ items:
             isExternal: '0'
     -
         title: 'Contact Us'
-        nesting: '1'
+        nesting: '0'
         type: static-page
-        url: ''
         code: ''
-        reference: contact-us
-        cmsPage: ''
+        reference: contact-us-contact-us-2
         replace: '0'
         viewBag:
             isHidden: '0'
