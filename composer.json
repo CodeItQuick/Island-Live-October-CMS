@@ -61,7 +61,11 @@
         "post-update-cmd": [
             "php artisan october:util set build",
             "php artisan package:discover"
-        ]
+        ],
+        
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+        
     },
     "config": {
         "preferred-install": "dist",
