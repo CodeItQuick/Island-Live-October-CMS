@@ -25,11 +25,9 @@ order_linkedin = 5
 <article class="blog-post-wrapper" data-aos="fade-up" data-aos-delay="300">
    <header class="author-info">
       <div class="tag-posted-in">
-         <ul class="list-unstyled">
             {% for category in post.categories %}
-            <li><i class="fa fa-tag"></i> <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}</li>
+            <i class="fa fa-tag"></i> <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
-         </ul>
       </div>
       <div class="author-posted">
          <div class="media">
@@ -37,7 +35,7 @@ order_linkedin = 5
                {% if post.user.avatar %}
                <a href="#"><img class="img-circle" src="{{ post.user.avatar.getThumb(48, 48, 'crop') }}" alt="{{ post.user.avatar.file_name }}"></a>
                {% else %}
-               <a href="#"><img class="img-circle" src="{{ 'assets/images/img/48x48.png'|theme }}" alt=""></a>
+               <a href="#"><img class="img-circle" src="{{ 'assets/images/img/PictureShot.jpg'|theme }}" alt=""></a>
                {% endif %}
             </div>
             <div class="media-body">
@@ -120,11 +118,11 @@ order_linkedin = 5
          {% if post.user.avatar %}
          <a href="#"><img class="img-circle" src="{{ post.user.avatar.getThumb(128, 128, 'crop') }}" alt="{{ post.user.avatar.file_name }}"></a>
          {% else %}
-         <a href="#"><img class="img-circle" src="{{ 'assets/images/img/75x75.png'|theme }}" alt=""></a>
+         <a href="#"><img class="img-circle" src="{{ 'assets/images/img/PictureShot.jpg'|theme }}" alt=""></a>
          {% endif %}
       </div>
       <div class="media-body">
-         <h4>About Writter</h4>
+         <h4>About The Writer</h4>
          <p>{{ this.theme.settings_aboutwritter_info }}</p>
       </div>
    </div>

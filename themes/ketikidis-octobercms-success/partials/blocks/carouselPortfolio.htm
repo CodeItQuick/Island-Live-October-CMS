@@ -1,0 +1,111 @@
+description = "Carousel Portfolio Section"
+
+[viewBag]
+==
+<div class="carouselPortfolio">
+    <div class="carouselPortfolio__menu">
+        <div class="carouselPortfolio__menu--card1">
+            <div class="carouselPortfolio__menu--card1--picture-1">
+                PICTURE 1
+            </div>
+            <div class="carouselPortfolio__menu--card1--text">
+                <h6>Photo Title</h6>
+                <p>Description of the photo</p>
+            </div>
+        </div>
+        <div class="carouselPortfolio__menu--card2">
+            <div class="carouselPortfolio__menu--card2--picture-2">
+                PICTURE 2
+            </div>
+            <div class="carouselPortfolio__menu--card2--text">
+                <h6>Photo Title</h6>
+                <p>Description of the photo</p>
+            </div>
+        </div>
+        <div class="carouselPortfolio__menu--card3">
+            <div class="carouselPortfolio__menu--card3--picture-3">
+                PICTURE 3
+            </div>
+            <div class="carouselPortfolio__menu--card3--text">
+                <h6>Photo Title</h6>
+                <p>Description of the photo</p>
+            </div>
+        </div>
+        <div class="carouselPortfolio__menu--card4">
+            <div class="carouselPortfolio__menu--card4--picture-4">
+                PICTURE 3
+            </div>
+            <div class="carouselPortfolio__menu--card4--text">
+                <h6>Photo Title</h6>
+                <p>Description of the photo</p>
+            </div>
+        </div>
+        <div class="carouselPortfolio__menu--card5">
+            <div class="carouselPortfolio__menu--card5--picture-5">
+                PICTURE 3
+            </div>
+            <div class="carouselPortfolio__menu--card5--text">
+                <h6>Photo Title</h6>
+                <p>Description of the photo</p>
+            </div>
+        </div>
+    </div>
+    <div class="carouselPortfolio__display">
+        <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
+            <div class="carouselPortfolio__display--control-semicircletop">
+                <span class="sr-only">onPrevious/s</span>
+                <div class="carouselPortfolio__display--control-semicircletop-prev fa fa-angle-up" aria-hidden="true">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="carouselPortfolio__display--picture"></div>
+        <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
+            <div class="carouselPortfolio__display--control-semicirclebottom">
+                <span class="sr-only">onPrevious/s</span>
+                <div class="carouselPortfolio__display--control-semicirclebottom-next fa fa-angle-down" aria-hidden="true">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--
+<div id="carousel carousel-slider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for fields in data.section_carousel %}
+        <li data-target="#carousel-slider" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        {% for fields in data.section_carousel %}
+        {% if loop.first %}
+        <div class="carousel-item active">
+            {% else %}
+            <div class="carousel-item">
+                {% endif %}
+                {% if fields.section_carousel_image %}
+                <img class="img-fluid" src="{{ fields.section_carousel_image|media }}" alt="{{ fields.section_carousel_title }}">
+                {% else %}
+                <img class="img-fluid" src="{{ 'assets/images/img/1920x700.png'|theme }}" alt="">
+                {% endif %}
+                <div class="carousel-caption">
+                    <h2>{{ fields.section_carousel_title }}</h2>
+                    <h3>{{ fields.section_carousel_subtitle }}</h3>
+                    <a class="btn btn-lg btn-common" href="{{ fields.section_carousel_buttonlink }}"><i class="{{ fields.section_carousel_buttonicon }}"></i>{{ fields.section_carousel_buttonlabel }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carousel-slider" role="button" data-slide="prev">
+            <span class="carousel-control carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-slider" role="button" data-slide="next">
+            <span class="carousel-control carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+    -->

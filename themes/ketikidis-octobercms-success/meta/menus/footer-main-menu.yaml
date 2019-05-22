@@ -4,8 +4,10 @@ items:
         title: Home
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: index
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -16,41 +18,28 @@ items:
         nesting: '0'
         type: static-page
         code: ''
-        reference: pages-about-us
+        reference: pages-abous-us-2
         replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Services
+        title: Portfolio
         nesting: '0'
         type: static-page
         code: ''
-        reference: services
+        reference: portfolio-portfolio-2-columns
         replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Pricing
-        nesting: '0'
-        type: static-page
+        title: Blog
+        type: cms-page
         code: ''
-        reference: pages-pricing
-        replace: '0'
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Team
-        nesting: '0'
-        type: static-page
-        code: ''
-        reference: pages-team
-        replace: '0'
+        reference: blog/blog
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -60,7 +49,7 @@ items:
         nesting: '0'
         type: static-page
         code: ''
-        reference: contact-us-contact-us
+        reference: contact-us-contact-us-2
         replace: '0'
         viewBag:
             isHidden: '0'

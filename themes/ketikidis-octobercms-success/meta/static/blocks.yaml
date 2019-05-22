@@ -173,6 +173,49 @@ carousel:
             label: Slide Button Link
             type: text
             span: full
+
+carouselPortfolio:
+  name: CarouselPortfolio
+  description: CarouselPortfolio
+  icon: icon-camera
+  fields:
+    section_carousel_section:
+      label: CarouselPortfolio
+      type: section
+      cssClass: 'p-a m-y control-scrollpanel'
+    section_carousel:
+      type: repeater
+      prompt: Add Carousel Slide
+      form:
+        fields:
+          section_carousel_line:
+            label: Carousel Slide
+            type: section
+          section_carousel_image:
+            label: Slide Image
+            type: mediafinder
+            mode: image
+            span: left
+          section_carousel_title:
+            label: Slide Title
+            type: text
+            span: left
+          section_carousel_subtitle:
+            label: Slide Subtitle
+            type: text
+            span: right
+          section_carousel_buttonlabel:
+            label: Slide Button Label
+            type: text
+            span: left
+          section_carousel_buttonicon:
+            label: Slide Button Icon
+            type: text
+            span: right
+          section_carousel_buttonlink:
+            label: Slide Button Link
+            type: text
+            span: full
             
 carouselowl:
     name: Owl Carousel
