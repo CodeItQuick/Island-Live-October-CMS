@@ -14,7 +14,7 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: 'About Us'
+        title: About
         nesting: '0'
         type: static-page
         code: ''
@@ -28,8 +28,10 @@ items:
         title: Portfolio
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: portfolio-portfolio-2-columns
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -37,9 +39,13 @@ items:
             isExternal: '0'
     -
         title: Blog
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: blog/blog
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -48,8 +54,10 @@ items:
         title: 'Contact Us'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: contact-us-contact-us-2
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
