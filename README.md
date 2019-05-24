@@ -6,7 +6,12 @@ Island Live is a website made by Evan that uses several technologies. These tech
 
 ### Installing The Island Live Website
 
-Download the github using git clone. On Windows, enter the laradock folder through the command line terminal and run a new docker machine. Then run "docker-compose up -d nginx phpmyadmin redis workspace mysql".
+Steps to installation:
+1. Git clone the repository
+2. Install laradock as a submodule in the repo (The files are on git ignore)
+3. Create your env file for laradock
+4. Install composer, then run composer install
+5. Create your env file for laradock and composer
 
 
 ### Development Team
