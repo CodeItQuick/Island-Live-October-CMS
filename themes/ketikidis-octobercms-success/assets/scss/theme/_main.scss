@@ -251,7 +251,7 @@ button {
 }
 
 .carouselPortfolio {
-    display: inline-block;
+    display: flex;
     width: 100%;
     height: 80vh;
     position: relative;
@@ -260,11 +260,11 @@ button {
     background-size: 100% 80vh;
 
     &__menu {
-        width: 20%;
         height: 100%;
         left: 0rem;
         top: 4rem;
         display: flex;
+        flex: 0 0 30rem;
         flex-flow: column wrap;
         align-content: center;
         justify-content: flex-start;
@@ -278,7 +278,7 @@ button {
             border: 1px solid white;
             box-shadow: none;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column wrap;
             align-content: center;
             justify-content: center;
 
@@ -330,33 +330,42 @@ button {
     }
 
     &__display {
-        width: 65vw;
+        display: flex;
+        flex: 1 1 100%;
+        flex-flow: column;
         height: 100%;
-        position: absolute;
-        transition: translate(-50%, -50%);
-        left: 25%;
-        top: 0%;
 
 
         &--picture {
             display: flex;
             flex-flow: column wrap;
+            flex: 0 1 70%;
             align-content: center;
             justify-content: center;
-            margin-top: 2.5%;
-            margin-bottom: 5%;
-            width: 100%;
             height: 70%;
-            background-image: url(../images/Music4.jpg);
-            background-repeat: no-repeat;
-            background-size: contain;
+            width: 100%;
+            margin-top: 3%;
+            margin-bottom: 7%;
+            position: relative;
+
+            &-1 {
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                width: 90%;
+                height: 80%;
+                background-image: url(../images/Music4.jpg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         }
 
         &--control {
             display: flex;
+            flex: 0 1 10%;
             flex-flow: column wrap;
-            align-content: flex-start;
-            width: 100%;
+            align-content: center;
             height: 10%;
             font-size: 4rem;
             color: white;
