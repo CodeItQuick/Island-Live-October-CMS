@@ -4,51 +4,21 @@ description = "Carousel Portfolio Section"
 ==
 <div class="carouselPortfolio">
     <div class="carouselPortfolio__menu">
-        <div class="carouselPortfolio__menu--card1">
-            <div class="carouselPortfolio__menu--card1--picture-1">
-                PICTURE 1
-            </div>
+        {% for fields in data.section_carousel %}
+        <div class="carouselPortfolio__menu--card{{loop.index0}}">
+            <template id="image-render">
+                <div class="carouselPortfolio__menu--card1--picture-{{loop.index0}}">
+
+                    <img src="{{ fields.section_carousel_image|media }}" />
+                    @{{ hello }}
+                </div>
+            </template>
             <div class="carouselPortfolio__menu--card1--text">
                 <h6>Photo Title</h6>
                 <p>Description of the photo</p>
             </div>
         </div>
-        <div class="carouselPortfolio__menu--card2">
-            <div class="carouselPortfolio__menu--card2--picture-2">
-                PICTURE 2
-            </div>
-            <div class="carouselPortfolio__menu--card2--text">
-                <h6>Photo Title</h6>
-                <p>Description of the photo</p>
-            </div>
-        </div>
-        <div class="carouselPortfolio__menu--card3">
-            <div class="carouselPortfolio__menu--card3--picture-3">
-                PICTURE 3
-            </div>
-            <div class="carouselPortfolio__menu--card3--text">
-                <h6>Photo Title</h6>
-                <p>Description of the photo</p>
-            </div>
-        </div>
-        <div class="carouselPortfolio__menu--card4">
-            <div class="carouselPortfolio__menu--card4--picture-4">
-                PICTURE 3
-            </div>
-            <div class="carouselPortfolio__menu--card4--text">
-                <h6>Photo Title</h6>
-                <p>Description of the photo</p>
-            </div>
-        </div>
-        <div class="carouselPortfolio__menu--card5">
-            <div class="carouselPortfolio__menu--card5--picture-5">
-                PICTURE 3
-            </div>
-            <div class="carouselPortfolio__menu--card5--text">
-                <h6>Photo Title</h6>
-                <p>Description of the photo</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="carouselPortfolio__display">
         <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
@@ -61,8 +31,10 @@ description = "Carousel Portfolio Section"
         </div>
 
         <div class="carouselPortfolio__display--picture">
-            <div class="carouselPortfolio__display--picture-1"></div>
+            <div class="carouselPortfolio__display--picture-1">
+                <img src="{{ data.section_coursel[2].section_carousel_image|media }}" />
             </div>
+        </div>
         <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
             <div class="carouselPortfolio__display--control-semicirclebottom">
                 <span class="sr-only">onPrevious/s</span>
@@ -71,7 +43,7 @@ description = "Carousel Portfolio Section"
             </div>
         </div>
 
-        </div>
+    </div>
 </div>
 <!--
 <div id="carousel carousel-slider" class="carousel slide" data-ride="carousel">

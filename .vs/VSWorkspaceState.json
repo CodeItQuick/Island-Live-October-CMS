@@ -1,20 +1,20 @@
 {
   "ExpandedNodes": [
     "",
+    "\\dist",
+    "\\modules\\system",
     "\\themes",
     "\\themes\\ketikidis-octobercms-success",
     "\\themes\\ketikidis-octobercms-success\\assets",
-    "\\themes\\ketikidis-octobercms-success\\assets\\images",
-    "\\themes\\ketikidis-octobercms-success\\assets\\images\\img",
-    "\\themes\\ketikidis-octobercms-success\\assets\\scss",
-    "\\themes\\ketikidis-octobercms-success\\assets\\scss\\theme",
-    "\\themes\\ketikidis-octobercms-success\\assets\\scss\\theme\\color",
-    "\\themes\\ketikidis-octobercms-success\\config",
-    "\\themes\\ketikidis-octobercms-success\\pages",
+    "\\themes\\ketikidis-octobercms-success\\assets\\css",
+    "\\themes\\ketikidis-octobercms-success\\assets\\js",
+    "\\themes\\ketikidis-octobercms-success\\assets\\js\\components",
+    "\\themes\\ketikidis-octobercms-success\\assets\\vendor\\owl-carousel",
+    "\\themes\\ketikidis-octobercms-success\\assets\\vendor\\owl-carousel\\js",
+    "\\themes\\ketikidis-octobercms-success\\meta",
     "\\themes\\ketikidis-octobercms-success\\partials",
-    "\\themes\\ketikidis-octobercms-success\\partials\\site",
-    "\\themes\\ketikidis-octobercms-success\\partials\\user"
+    "\\themes\\ketikidis-octobercms-success\\partials\\site"
   ],
-  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\meta\\static\\blocks.yaml",
+  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\meta\\static-pages.yaml",
   "PreviewInSolutionExplorer": false
 }
