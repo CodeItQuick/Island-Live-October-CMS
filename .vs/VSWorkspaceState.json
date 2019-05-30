@@ -2,19 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\dist",
-    "\\modules\\system",
+    "\\laradock",
     "\\themes",
     "\\themes\\ketikidis-octobercms-success",
     "\\themes\\ketikidis-octobercms-success\\assets",
     "\\themes\\ketikidis-octobercms-success\\assets\\css",
     "\\themes\\ketikidis-octobercms-success\\assets\\js",
-    "\\themes\\ketikidis-octobercms-success\\assets\\js\\components",
-    "\\themes\\ketikidis-octobercms-success\\assets\\vendor\\owl-carousel",
-    "\\themes\\ketikidis-octobercms-success\\assets\\vendor\\owl-carousel\\js",
-    "\\themes\\ketikidis-octobercms-success\\meta",
-    "\\themes\\ketikidis-octobercms-success\\partials",
-    "\\themes\\ketikidis-octobercms-success\\partials\\site"
+    "\\themes\\ketikidis-octobercms-success\\assets\\js\\components"
   ],
-  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\meta\\static-pages.yaml",
   "PreviewInSolutionExplorer": false
 }

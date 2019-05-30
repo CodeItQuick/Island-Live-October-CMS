@@ -5,19 +5,21 @@ description = "Carousel Portfolio Section"
 <div class="carouselPortfolio">
     <div class="carouselPortfolio__menu">
         {% for fields in data.section_carousel %}
-        <div class="carouselPortfolio__menu--card{{loop.index0}}">
-            <template id="image-render">
-                <div class="carouselPortfolio__menu--card1--picture-{{loop.index0}}">
-
-                    <img src="{{ fields.section_carousel_image|media }}" />
-                    @{{ hello }}
+            
+                <div class="carouselPortfolio__menu--card{{loop.index0}}">
+                    <main-content>
+                        <slot>
+                            <div class="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}">
+                                <img src="{{ fields.section_carousel_image|media }}" />
+                            </div>
+                            <div class="section__text">
+                                <h6>Photo Title</h6>
+                                <p>Description of the photo</p>
+                            </div>
+                        </slot>
+                    </main-content>
                 </div>
-            </template>
-            <div class="carouselPortfolio__menu--card1--text">
-                <h6>Photo Title</h6>
-                <p>Description of the photo</p>
-            </div>
-        </div>
+            
         {% endfor %}
     </div>
     <div class="carouselPortfolio__display">
