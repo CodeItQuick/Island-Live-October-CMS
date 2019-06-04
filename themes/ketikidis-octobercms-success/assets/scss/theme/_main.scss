@@ -256,7 +256,7 @@ button {
     height: 80vh;
     position: relative;
     //colors at: http://materialuicolors.co/?utm_source=launchers
-    background: linear-gradient(to right, rgba(black, 0.80), rgba(black, 0.80)), url(../images/Symphony.jpg);
+    background: linear-gradient(to right, rgba(black, 0.85), rgba(black, 0.85)), url(../images/Symphony.jpg);
     background-size: 100% 80vh;
 
     &__menu {
@@ -297,7 +297,7 @@ button {
                 overflow: hidden;
 
                 & img {
-                    width: 50%;
+                    width: 95%;
                     height: 70%;
                     display: flex;
                     align-content: flex-start;
@@ -311,7 +311,8 @@ button {
                 flex-flow: column wrap;
                 flex: 1 0 20%;
                 align-content: flex-start;
-                justify-content: flex-start;
+                justify-content: center;
+
 
                 & p, & h6 {
                     justify-content: flex-start;
@@ -339,16 +340,25 @@ button {
             margin-bottom: 7%;
             position: relative;
 
-            &-1 {
+            &-1 img {
                 position: absolute;
-                transform: translate(-50%, -50%);
-                top: 50%;
+                transform: translateX(-50%);
+                top: 0%;
                 left: 50%;
-                width: 90%;
+                width: 40%;
                 height: 80%;
-                background-image: url(../images/Music4.jpg);
-                background-repeat: no-repeat;
-                background-size: contain;
+
+
+
+                .imgslidein {
+                    transition: transform 1s ease-out;
+                    top: 50%;
+                }
+
+
+                .imgslideout {
+                    animation: transform 1s ease-out forwards;
+                }
             }
         }
 
@@ -409,6 +419,64 @@ button {
                 }
             }
         }
+    }
+}
+.slideup {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: -50%;
+    left: 50%;
+    width: 40%;
+    height: 80%;
+    animation: slideup 1s forwards;
+}
+
+@keyframes slideup {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: -150%;
+    }
+}
+
+.slidedown {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 80%;
+    animation: slidedown 1s forwards;
+}
+
+@keyframes slidedown {
+    0% {
+        top: 150%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+#slidedownmenu {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 80%;
+    animation: slidedownmenu 1s forwards;
+}
+
+@keyframes slidedownmenu {
+    0% {
+        top: 150%;
+    }
+
+    100% {
+        top: 0%;
     }
 }
     /*

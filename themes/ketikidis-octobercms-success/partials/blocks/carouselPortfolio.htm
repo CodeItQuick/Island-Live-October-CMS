@@ -2,51 +2,48 @@ description = "Carousel Portfolio Section"
 
 [viewBag]
 ==
-<div class="carouselPortfolio">
-    <div class="carouselPortfolio__menu">
+<div class="carouselPortfolio" refs="parent" id="menu">
+    <div class="carouselPortfolio__menu" :id="{'slidedownmenu': toggledatamenu}">
         {% for fields in data.section_carousel %}
-            
-                <div class="carouselPortfolio__menu--card{{loop.index0}}">
-                    <main-content>
-                        <slot>
-                            <div class="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}">
-                                <img src="{{ fields.section_carousel_image|media }}" />
-                            </div>
-                            <div class="section__text">
-                                <h6>Photo Title</h6>
-                                <p>Description of the photo</p>
-                            </div>
-                        </slot>
-                    </main-content>
-                </div>
-            
+        <div class="carouselPortfolio__menu--card{{loop.index0}}" > 
+            <main-content index="{{loop.index0}}"
+                          compimgdata="no changes"
+                          imgclassvalue="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}"
+                          textclassvalue="carouselPortfolio__menu--card{{loop.index0}}--text"
+                          h6value="Photo Title"
+                          pvalue="Description of the photo"
+                          dataimgvalue="{{fields.section_carousel_image|media}}"
+                          ref="child">
+            </main-content>
+        </div>
         {% endfor %}
     </div>
     <div class="carouselPortfolio__display">
-        <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
-            <div class="carouselPortfolio__display--control-semicircletop">
-                <span class="sr-only">onPrevious/s</span>
-                <div class="carouselPortfolio__display--control-semicircletop-prev fa fa-angle-up" aria-hidden="true">
-                </div>
-            </div>
+        <previous-button class="carouselPortfolio__display--control"
+                         href="#carousel-slider"
+                         data-slide="prev">
 
-        </div>
 
-        <div class="carouselPortfolio__display--picture">
-            <div class="carouselPortfolio__display--picture-1">
-                <img src="{{ data.section_coursel[2].section_carousel_image|media }}" />
-            </div>
-        </div>
-        <div class="carouselPortfolio__display--control" href="#carousel-slider" role="button" data-slide="prev">
-            <div class="carouselPortfolio__display--control-semicirclebottom">
-                <span class="sr-only">onPrevious/s</span>
-                <div class="carouselPortfolio__display--control-semicirclebottom-next fa fa-angle-down" aria-hidden="true">
-                </div>
-            </div>
-        </div>
+        </previous-button>
+        <display-image displayimg="{{data.section_carousel[2].section_carousel_image|media}}"
+                       toggledata="false">
+
+        </display-image>
+
+        <next-button class="carouselPortfolio__display--control"
+                         href="#carousel-slider"
+                         data-slide="prev">
+
+
+        </next-button>
 
     </div>
 </div>
+
+<script>
+
+
+</script>
 <!--
 <div id="carousel carousel-slider" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

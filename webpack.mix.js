@@ -11,7 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('./themes/ketikidis-octobercms-success/assets/js/app.js', './themes/ketikidis-octobercms-success/assets/js/compiled/').setPublicPath('themes');//.sass('src/app.scss', 'dist/');
+mix.js('./themes/ketikidis-octobercms-success/assets/js/app.js',
+    './themes/ketikidis-octobercms-success/assets/js/compiled/')
+    .setPublicPath('themes');//.sass('src/app.scss', 'dist/');
 
 // Full API
 // mix.js(src, output);
