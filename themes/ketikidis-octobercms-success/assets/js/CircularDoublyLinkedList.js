@@ -1,18 +1,17 @@
 
 import CircularDoublyLinkedListNode from './CircularDoublyLinkedListNode'
-
 const head = Symbol("head");
 
 export default class CircularDoublyLinkedList {
 
     constructor() {
         this[head] = null;
+        this.numberElements = 0;
     }
 
     addNode(newVueInstance) {
-
         const newNode = new CircularDoublyLinkedListNode(newVueInstance)
-
+        
         if (this[head] === null) {
             this[head] = newNode;
             newNode.setNext(newNode);
@@ -24,6 +23,8 @@ export default class CircularDoublyLinkedList {
             newNode.setNext(this[head]);
             this[head].setPrevious(newNode);
         }
+
+        console.log('loaded');
         
     }
 
@@ -36,7 +37,7 @@ export default class CircularDoublyLinkedList {
             let i = 0;
 
             do {
-
+                
                 if (i === index) {
                     return current.getVueInstance();
                 }
@@ -44,7 +45,30 @@ export default class CircularDoublyLinkedList {
                 current = current.getNext();
                 i++;
 
-            } while ((current !== this[head]) && (i <= index));
+            } while (i <= index);
+
+        }
+
+        return undefined;
+    }
+    getNum(index) {
+
+        // ensure `index` is a positive value and the list isn't empty
+        if ((index > -1) && (this[head] !== null)) {
+
+            let current = this[head];
+            let i = 0;
+
+            do {
+
+                if (i == index) {
+                    return current.getPictureNum();
+                }
+
+                current = current.getNext();
+                i++;
+
+            } while (i <= index);
 
         }
 
@@ -54,7 +78,6 @@ export default class CircularDoublyLinkedList {
 
     getIndex(newNode) {
         // ensure `index` is a positive value and the list isn't empty
-        console.log('running circular list getindex');
         if ((newNode !== null) && (this[head] !== null)) {
 
             let current = this[head];
@@ -79,23 +102,12 @@ export default class CircularDoublyLinkedList {
 
     rotate() {
         this[head] = this[head].getNext();
-        let current = this[head];
-        let i = 0;
-
-        while ((current !== this[head]) && this[head] !== null) {
-            
-            console.log(current)
-
-            current.getVueInstance().setNewData(
-                current.getPrevious().getVueInstance().$refs.child.getImgValue()
-            );
-
-            current = current.getNext();
-            i++;
-
-        } 
         
-       
+    }
+
+    reverseRotate() {
+        this[head] = this[head].getPrevious();
+
     }
 
 }

@@ -4,11 +4,16 @@ export default class CircularDoublyLinkedListNode {
     
     constructor(newVueInstance) {
         this.vueInstance = newVueInstance;
+        this.pictureNum = null;
         
     }
 
     setVueInstance(newVueInstance) {
         this.vueInstance = newVueInstance;
+    }
+
+    setPictureNum(pictureNum) {
+        this.pictureNum = pictureNum;
     }
 
     setPrevious(previous) {
@@ -20,7 +25,11 @@ export default class CircularDoublyLinkedListNode {
     }
     
     getVueInstance() {
-        return this.vueInstance
+        return this.vueInstance;
+    }
+
+    getPictureNum() {
+        return this.pictureNum;
     }
 
     getPrevious() {

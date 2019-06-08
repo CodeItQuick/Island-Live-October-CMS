@@ -3,21 +3,17 @@ description = "Carousel Portfolio Section"
 [viewBag]
 ==
 <div class="carouselPortfolio" refs="parent" id="menu">
-    <div class="carouselPortfolio__menu" :id="{'slidedownmenu': toggledatamenu}">
-        {% for fields in data.section_carousel %}
-        <div class="carouselPortfolio__menu--card{{loop.index0}}" > 
-            <main-content index="{{loop.index0}}"
-                          compimgdata="no changes"
-                          imgclassvalue="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}"
-                          textclassvalue="carouselPortfolio__menu--card{{loop.index0}}--text"
-                          h6value="Photo Title"
-                          pvalue="Description of the photo"
-                          dataimgvalue="{{fields.section_carousel_image|media}}"
-                          ref="child">
-            </main-content>
-        </div>
-        {% endfor %}
-    </div>
+     
+      {% for fields in data.section_carousel %}
+      <div class="loadData" :loadIntoVuex="setPicture('{{fields.section_carousel_image|media}}')" >
+</div>
+    {% endfor %}
+        <image-menu parentclass="carouselPortfolio__menu--card{{loop.index0}}"
+                    parentindex="{{loop.Index0}}"
+                    parentimgclassvalue="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}"
+                    parenttextclassvalue="carouselPortfolio__menu--card{{loop.index0}}--text">
+            
+        </image-menu>
     <div class="carouselPortfolio__display">
         <previous-button class="carouselPortfolio__display--control"
                          href="#carousel-slider"
@@ -25,8 +21,9 @@ description = "Carousel Portfolio Section"
 
 
         </previous-button>
-        <display-image displayimg="{{data.section_carousel[2].section_carousel_image|media}}"
-                       toggledata="false">
+        <display-image :displayimg="getImageValue()"
+                       :displayimgincoming="getImageValueIncoming()"
+                       gettoggle="gettoggle">
 
         </display-image>
 

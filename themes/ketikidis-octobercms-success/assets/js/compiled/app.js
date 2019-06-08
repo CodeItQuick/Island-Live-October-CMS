@@ -95,6 +95,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vuexStore.js */ "./themes/ketikidis-octobercms-success/assets/js/vuexStore.js");
 //
 //
 //
@@ -106,21 +107,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'main-content',
   props: {
-    cardclassvalue: String,
-    imgclassvalue: String,
-    textclassvalue: String,
+    cardClass: String,
+    cardIndex: Number,
+    cardimgclassvalue: String,
+    cardtextclassvalue: String,
     h6value: String,
     pvalue: String,
-    dataimgvalue: String
+    index: String,
+    compimgdata: String
   },
   data: function data() {
     return {
       dataimgvalue: String
     };
+  },
+  methods: {
+    getPicture: function getPicture(pictureNum) {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture0;
+    },
+    getToggleData: function getToggleData() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getToggleData;
+    },
+    getTopSlide: function getTopSlide(cardIndex) {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getTopSlide + cardIndex;
+    }
   }
 });
 
@@ -135,6 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vuexStore.js */ "./themes/ketikidis-octobercms-success/assets/js/vuexStore.js");
 //
 //
 //
@@ -144,14 +159,190 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "previous-button",
+  name: "display-image",
   props: {
     displayimg: String,
-    displayimgincoming: String,
-    toggledata: false
+    displayimgincoming: String
   },
-  data: {}
+  data: function data() {
+    return {
+      displayimg: displayimg,
+      displayimgincoming: displayimgincoming
+    };
+  },
+  methods: {
+    getPicture: function getPicture(pictureNum) {
+      if (pictureNum == 0) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture0;
+      } else if (pictureNum == 1) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture1;
+      } else if (pictureNum == 2) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture2;
+      } else if (pictureNum == 3) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture3;
+      } else if (pictureNum == 4) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture4;
+      } else if (pictureNum == 5) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getPicture5;
+      } else {
+        return displayimg;
+      }
+    },
+    getCompToggle: function getCompToggle(isDown, isPrevious) {
+      if (isPrevious) {
+        if (isDown) {
+          if (this.getToggle()) {
+            return 'previousslidedown';
+          } else {
+            return 'none';
+          }
+        } else if (!isDown) {
+          if (this.getToggle()) {
+            return 'previousslideup';
+          } else {
+            return 'none';
+          }
+        }
+      } else if (!isPrevious) {
+        if (isDown) {
+          if (this.getToggle()) {
+            return 'nextslideup';
+          } else {
+            return 'none';
+          }
+        } else if (!isDown) {
+          if (this.getToggle()) {
+            return 'nextslidedown';
+          } else {
+            return 'none';
+          }
+        }
+      }
+    },
+    getToggle: function getToggle() {
+      if (_vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getToggleData) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    isDown: function isDown() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.isDown;
+    },
+    getIsPrevious: function getIsPrevious() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_0__["default"].getters.getIsPrevious;
+    },
+    incomingSlide: function incomingSlide(isCurrent) {
+      if (isCurrent) {
+        if (this.getIsPrevious()) {
+          return this.getPicture(5);
+        } else {
+          return this.getPicture(3);
+        }
+      } else if (this.getIsPrevious()) {
+        return this.getPicture(4);
+      } else {
+        return this.getPicture(4);
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _appPortfolio_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./appPortfolio.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/appPortfolio.vue");
+/* harmony import */ var _vuexStore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../vuexStore.js */ "./themes/ketikidis-octobercms-success/assets/js/vuexStore.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "image-menu",
+  components: {
+    "main-content": _appPortfolio_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: _defineProperty({
+    cardclass: String,
+    cardIndex: Number,
+    cardimgclassvalue: String,
+    cardtextclassvalue: String,
+    parentclass: String,
+    parentindex: String,
+    parentimgclassvalue: String,
+    parenttextclassvalue: String
+  }, "parentclass", String),
+  data: function data() {
+    return {
+      dataimgvalue: String
+    };
+  },
+  methods: {
+    nextImage: function nextImage() {
+      this.$eventhub.$emit("next");
+    },
+    currentClass: function currentClass(concatString, firstElement) {
+      var suffix = "";
+
+      if (firstElement) {
+        suffix = "FirstCard";
+      }
+
+      return concatString + suffix;
+    },
+    getToggleData: function getToggleData() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_1__["default"].getters.getToggleData;
+    },
+    rotateClass: function rotateClass(isRotated) {
+      if (isRotated == "Down") {
+        return "carouselPortfolio__menu" + "rotatedown";
+      } else if (isRotated == "Up") {
+        return "carouselPortfolio__menu" + "rotateup";
+      } else {
+        return "carouselPortfolio__menu";
+      }
+    },
+    upOrDown: function upOrDown(isUp, isToggled) {
+      if (!isToggled) {
+        return false;
+      } else if (isUp) {
+        return "Up";
+      } else {
+        return "Down";
+      }
+    },
+    isPrevious: function isPrevious() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_1__["default"].getters.getIsPrevious;
+    },
+    getPicture: function getPicture(pictureNum) {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_1__["default"].getters.getPicture(pictureNum);
+    }
+  }
 });
 
 /***/ }),
@@ -2567,18 +2758,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "element" } }, [
-    _c(
-      "div",
-      { class: _vm.imgclassvalue },
-      [
-        _c("img", { attrs: { src: _vm.dataimgvalue } }),
-        _vm._v(" "),
-        _vm._t("default")
-      ],
-      2
-    ),
+    _c("div", { class: _vm.cardimgclassvalue }, [
+      _c("img", { attrs: { src: _vm.compimgdata } })
+    ]),
     _vm._v(" "),
-    _c("div", { class: _vm.textclassvalue, attrs: { alt: "" } }, [
+    _c("div", { class: _vm.cardtextclassvalue }, [
       _c("h6", [_vm._v(_vm._s(_vm.h6value))]),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.pvalue))])
@@ -2610,16 +2794,74 @@ var render = function() {
   return _c("div", { staticClass: "carouselPortfolio__display--picture" }, [
     _c("div", { staticClass: "carouselPortfolio__display--picture-1" }, [
       _c("img", {
-        class: { slidedown: _vm.toggledata },
-        attrs: { src: _vm.displayimg }
+        class: _vm.getCompToggle(true, _vm.getIsPrevious()),
+        attrs: { src: _vm.incomingSlide(true) }
       }),
       _vm._v(" "),
       _c("img", {
-        class: { slideup: _vm.toggledata },
-        attrs: { src: _vm.displayimgincoming, hidden: !_vm.toggledata }
+        class: _vm.getCompToggle(false, _vm.getIsPrevious()),
+        attrs: { src: _vm.incomingSlide(false) }
       })
     ])
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      class: _vm.rotateClass(
+        _vm.upOrDown(_vm.isPrevious(), _vm.getToggleData())
+      ),
+      attrs: { id: "#cardmenu" }
+    },
+    _vm._l(7, function(cardsIndex) {
+      return _c(
+        "div",
+        { class: _vm.currentClass(_vm.parentclass, false) },
+        [
+          _c("main-content", {
+            ref: "child",
+            refInFor: true,
+            attrs: {
+              cardClass: _vm.currentClass(_vm.parentclass, false),
+              cardIndex: cardsIndex,
+              compimgdata: _vm.getPicture(cardsIndex),
+              cardimgclassvalue:
+                _vm.currentClass(_vm.parentclass, false) +
+                _vm.currentClass("--picture", false),
+              cardtextclassvalue:
+                _vm.currentClass(_vm.parentclass, false) + "--text",
+              h6value: "Photo Title",
+              pvalue: "Description of the photo"
+            }
+          })
+        ],
+        1
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -15875,6 +16117,7 @@ function () {
     _classCallCheck(this, CircularDoublyLinkedList);
 
     this[head] = null;
+    this.numberElements = 0;
   }
 
   _createClass(CircularDoublyLinkedList, [{
@@ -15893,6 +16136,8 @@ function () {
         newNode.setNext(this[head]);
         this[head].setPrevious(newNode);
       }
+
+      console.log('loaded');
     }
   }, {
     key: "get",
@@ -15909,7 +16154,27 @@ function () {
 
           current = current.getNext();
           i++;
-        } while (current !== this[head] && i <= index);
+        } while (i <= index);
+      }
+
+      return undefined;
+    }
+  }, {
+    key: "getNum",
+    value: function getNum(index) {
+      // ensure `index` is a positive value and the list isn't empty
+      if (index > -1 && this[head] !== null) {
+        var current = this[head];
+        var i = 0;
+
+        do {
+          if (i == index) {
+            return current.getPictureNum();
+          }
+
+          current = current.getNext();
+          i++;
+        } while (i <= index);
       }
 
       return undefined;
@@ -15918,8 +16183,6 @@ function () {
     key: "getIndex",
     value: function getIndex(newNode) {
       // ensure `index` is a positive value and the list isn't empty
-      console.log('running circular list getindex');
-
       if (newNode !== null && this[head] !== null) {
         var current = this[head];
         var i = 0;
@@ -15940,15 +16203,11 @@ function () {
     key: "rotate",
     value: function rotate() {
       this[head] = this[head].getNext();
-      var current = this[head];
-      var i = 0;
-
-      while (current !== this[head] && this[head] !== null) {
-        console.log(current);
-        current.getVueInstance().setNewData(current.getPrevious().getVueInstance().$refs.child.getImgValue());
-        current = current.getNext();
-        i++;
-      }
+    }
+  }, {
+    key: "reverseRotate",
+    value: function reverseRotate() {
+      this[head] = this[head].getPrevious();
     }
   }]);
 
@@ -15986,12 +16245,18 @@ function () {
     _classCallCheck(this, CircularDoublyLinkedListNode);
 
     this.vueInstance = newVueInstance;
+    this.pictureNum = null;
   }
 
   _createClass(CircularDoublyLinkedListNode, [{
     key: "setVueInstance",
     value: function setVueInstance(newVueInstance) {
       this.vueInstance = newVueInstance;
+    }
+  }, {
+    key: "setPictureNum",
+    value: function setPictureNum(pictureNum) {
+      this.pictureNum = pictureNum;
     }
   }, {
     key: "setPrevious",
@@ -16007,6 +16272,11 @@ function () {
     key: "getVueInstance",
     value: function getVueInstance() {
       return this.vueInstance;
+    }
+  }, {
+    key: "getPictureNum",
+    value: function getPictureNum() {
+      return this.pictureNum;
     }
   }, {
     key: "getPrevious",
@@ -16038,14 +16308,14 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! es6-promise/auto */ "./node_modules/es6-promise/auto.js");
-/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(es6_promise_auto__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_appPortfolio_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/appPortfolio.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/appPortfolio.vue");
-/* harmony import */ var _CircularDoublyLinkedList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CircularDoublyLinkedList */ "./themes/ketikidis-octobercms-success/assets/js/CircularDoublyLinkedList.js");
-/* harmony import */ var _components_previousButton_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/previousButton.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/previousButton.vue");
-/* harmony import */ var _components_nextButton_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/nextButton.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/nextButton.vue");
-/* harmony import */ var _components_displayImage_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/displayImage.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/displayImage.vue");
+/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! es6-promise/auto */ "./node_modules/es6-promise/auto.js");
+/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(es6_promise_auto__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _CircularDoublyLinkedList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CircularDoublyLinkedList */ "./themes/ketikidis-octobercms-success/assets/js/CircularDoublyLinkedList.js");
+/* harmony import */ var _components_previousButton_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/previousButton.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/previousButton.vue");
+/* harmony import */ var _components_nextButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/nextButton.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/nextButton.vue");
+/* harmony import */ var _components_displayImage_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/displayImage.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/displayImage.vue");
+/* harmony import */ var _components_imageMenu_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/imageMenu.vue */ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue");
+/* harmony import */ var _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./vuexStore.js */ "./themes/ketikidis-octobercms-success/assets/js/vuexStore.js");
 
 
 
@@ -16055,47 +16325,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$eventhub = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
-var sidebarList = new _CircularDoublyLinkedList__WEBPACK_IMPORTED_MODULE_4__["default"]();
-var element = "#menu";
-var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
-  state: {
-    firstPicture: "no picture 1",
-    secondPicture: "no picture 2",
-    thirdPicture: "no picture 3",
-    fourthPicture: "no picture 4"
-  },
-  mutations: {
-    increment: function increment(state) {
-      state.count++;
-    }
-  }
-});
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.directive('img', function (url) {
-  var img = new Image();
-  img.src = url;
-
-  img.onload = function () {
-    this.el.src = url;
-    $(this.el).css('opacity', 0).animate({
-      opacity: 1
-    }, 1000);
-  }.bind(this);
-});
+var sidebarList = new _CircularDoublyLinkedList__WEBPACK_IMPORTED_MODULE_2__["default"]();
 var settings = {
-  el: element,
+  el: "#menu",
   components: {
-    'main-content': _components_appPortfolio_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    'previous-button': _components_previousButton_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    'next-button': _components_nextButton_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    'display-image': _components_displayImage_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+    'previous-button': _components_previousButton_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    'next-button': _components_nextButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    'display-image': _components_displayImage_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    'image-menu': _components_imageMenu_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   props: {
     classLocation: {
-      "default": element + "0",
+      "default": menu + "0",
       type: String
     },
     newimgvalue: Number,
-    src: String
+    src: String,
+    loadData: String
   },
   data: {
     data: 'initial',
@@ -16105,61 +16351,41 @@ var settings = {
     toggledatamenu: false
   },
   methods: {
-    setnewdata: function setnewdata(newLocation) {
-      this.dataimgvalue = newLocation;
+    getImageValue: function getImageValue() {
+      return _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].getters.Picture3;
     },
-    getImgValue: function getImgValue() {
-      return this.dataimgvalue;
+    getImageValueIncoming: function getImageValueIncoming() {
+      if (_vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].getters.getIsPrevious) {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].getters.getPicture2;
+      } else {
+        return _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].getters.getPicture4;
+      }
     },
-    getIndex: function getIndex() {
-      return this.index;
-    },
-    setImgValue: function setImgValue(newDataImgValue) {
-      this.dataimgvalue = newDataImgValue;
-    },
-    loadimage: function loadimage() {
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(sidebarList.get(this.index), 'dataimgvalue', this.newimgvalue);
-      return this.dataimgvalue;
-    },
-    watchNewValue: function watchNewValue() {}
+    setPicture: function setPicture(newImage) {
+      _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('addPicture', newImage);
+    }
   },
   created: function created() {
     this.$eventhub.$on('dataimgvalue'), function (dataimgvalue) {
       console.log("image updated");
       vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(sidebarList.get(this.index), 'dataimgvalue', dataimgvalue);
     }, this.$eventhub.$on('previous', function () {
-      console.log(vm1.$children[5]);
-      var current0 = vm1.$children[0].$props.dataimgvalue;
-      var current1 = vm1.$children[1].$props.dataimgvalue;
-      var current2 = vm1.$children[2].$props.dataimgvalue;
-      var current3 = vm1.$children[3].$props.dataimgvalue;
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[0].$props, 'dataimgvalue', current1);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[1].$props, 'dataimgvalue', current2);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[2].$props, 'dataimgvalue', current3);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[3].$props, 'dataimgvalue', current0);
+      _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setPrevious');
+      _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setToggle');
       setTimeout(function () {
-        vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[5].$props, 'toggledata', false);
-        vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[5].$props, 'displayimgincoming', current3);
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setDown');
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setToggle');
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('decreaseTopSlide');
       }, 1000);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[5].$props, 'toggledata', true);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[5].$props, 'displayimg', current3);
     }), this.$eventhub.$on('next', function () {
-      console.log(vm1.$children[0].$props);
-      var current0 = vm1.$children[0].$props.dataimgvalue;
-      var current1 = vm1.$children[1].$props.dataimgvalue;
-      var current2 = vm1.$children[2].$props.dataimgvalue;
-      var current3 = vm1.$children[3].$props.dataimgvalue;
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[0].$props, 'dataimgvalue', current3);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[1].$props, 'dataimgvalue', current0);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[2].$props, 'dataimgvalue', current1);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[3].$props, 'dataimgvalue', current2);
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$children[5].$props, 'displayimg', current1);
+      _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setNext');
+      _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setToggle');
+      setTimeout(function () {
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setUp');
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('setToggle');
+        _vuexStore_js__WEBPACK_IMPORTED_MODULE_7__["default"].commit('increaseTopSlide');
+      }, 1000);
     });
-  },
-  watch: {
-    'dataimgvalue': function dataimgvalue() {
-      vue__WEBPACK_IMPORTED_MODULE_0___default.a.set(vm1.$props, 'displayimg', vm1.$children[2].$props.dataimgvalue);
-    }
   }
 };
 var vm1 = new vue__WEBPACK_IMPORTED_MODULE_0___default.a(settings); //console.log(sidebarList.get(1).$el.getAttribute('index'))
@@ -16322,6 +16548,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue":
+/*!********************************************************************************!*\
+  !*** ./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./imageMenu.vue?vue&type=template&id=164f38f0& */ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0&");
+/* harmony import */ var _imageMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imageMenu.vue?vue&type=script&lang=js& */ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _imageMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_imageMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./imageMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_imageMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0&":
+/*!***************************************************************************************************************!*\
+  !*** ./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./imageMenu.vue?vue&type=template&id=164f38f0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./themes/ketikidis-octobercms-success/assets/js/components/imageMenu.vue?vue&type=template&id=164f38f0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_imageMenu_vue_vue_type_template_id_164f38f0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./themes/ketikidis-octobercms-success/assets/js/components/nextButton.vue":
 /*!*********************************************************************************!*\
   !*** ./themes/ketikidis-octobercms-success/assets/js/components/nextButton.vue ***!
@@ -16457,6 +16752,177 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_previousButton_vue_vue_type_template_id_06c78c4b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./themes/ketikidis-octobercms-success/assets/js/vuexStore.js":
+/*!********************************************************************!*\
+  !*** ./themes/ketikidis-octobercms-success/assets/js/vuexStore.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! es6-promise/auto */ "./node_modules/es6-promise/auto.js");
+/* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(es6_promise_auto__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _CircularDoublyLinkedList_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CircularDoublyLinkedList.js */ "./themes/ketikidis-octobercms-success/assets/js/CircularDoublyLinkedList.js");
+var _getters;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  state: {
+    picture0: "no picture 0",
+    picture1: "no picture 1",
+    picture2: "no picture 2",
+    picture3: "no picture 3",
+    picture4: "no picture 4",
+    picture5: "no picture 5",
+    picture6: "no picture 6",
+    picture7: "no picture 7",
+    toggleData: false,
+    isDown: true,
+    isPrevious: false,
+    slideReel: new _CircularDoublyLinkedList_js__WEBPACK_IMPORTED_MODULE_3__["default"](),
+    topSlide: 0,
+    head: null
+  },
+  mutations: {
+    addPicture: function addPicture(state, pictureAddress) {
+      state.slideReel.addNode(pictureAddress);
+    },
+    setToggle: function setToggle(state) {
+      state.toggleData = !state.toggleData;
+    },
+    setDown: function setDown(state) {
+      state.isDown = true;
+    },
+    setUp: function setUp(state) {
+      state.isDown = false;
+    },
+    setPrevious: function setPrevious(state) {
+      state.isPrevious = true;
+    },
+    setNext: function setNext(state) {
+      state.isPrevious = false;
+    },
+    increaseTopSlide: function increaseTopSlide(state) {
+      state.slideReel.reverseRotate();
+      state.picture0 = state.slideReel.get(0);
+      state.picture1 = state.slideReel.get(1);
+      state.picture2 = state.slideReel.get(2);
+      state.picture3 = state.slideReel.get(3);
+      state.picture4 = state.slideReel.get(4);
+      state.picture5 = state.slideReel.get(5);
+      state.picture6 = state.slideReel.get(6);
+      state.picture7 = state.slideReel.get(7); //state.topSlide = state.topSlide + 1;
+    },
+    decreaseTopSlide: function decreaseTopSlide(state) {
+      state.slideReel.rotate();
+      state.picture0 = state.slideReel.get(0);
+      state.picture1 = state.slideReel.get(1);
+      state.picture2 = state.slideReel.get(2);
+      state.picture3 = state.slideReel.get(3);
+      state.picture4 = state.slideReel.get(4);
+      state.picture5 = state.slideReel.get(5);
+      state.picture6 = state.slideReel.get(6);
+      state.picture7 = state.slideReel.get(7); //state.topSlide = state.topSlide - 1;
+    },
+    setHead: function setHead(state, head) {
+      state.head = head;
+    }
+  },
+  actions: {
+    addPicture: function addPicture(context, pictureAddress) {
+      context.commit('addPicture', pictureAddress);
+    },
+    setToggle: function setToggle(context) {
+      context.commit('setToggle');
+    },
+    setDown: function setDown(context) {
+      context.commit('setDown');
+    },
+    setUp: function setUp(context) {
+      context.commit('setUp');
+    },
+    setPrevious: function setPrevious(context) {
+      context.commit('setPrevious');
+    },
+    setNext: function setNext(context) {
+      context.commit('setNext');
+    },
+    increaseTopSlide: function increaseTopSlide(context) {
+      context.commit('increaseTopSlide');
+    },
+    decreaseTopSlide: function decreaseTopSlide(context) {
+      context.commit('decreaseTopSlide');
+    },
+    setHead: function setHead(context, head) {
+      context.commit('setHead', head);
+    }
+  },
+  getters: (_getters = {
+    getPicture: function getPicture(state) {
+      return function (slideNum) {
+        return state.slideReel.get(slideNum);
+      };
+    },
+    getPicture0: function getPicture0(state) {
+      return state.picture0;
+    },
+    getPicture1: function getPicture1(state) {
+      return state.picture1;
+    },
+    getPicture2: function getPicture2(state) {
+      return state.picture2;
+    },
+    getPicture3: function getPicture3(state) {
+      return state.picture3;
+    },
+    getPicture4: function getPicture4(state) {
+      return state.picture4;
+    },
+    getPicture5: function getPicture5(state) {
+      return state.picture5;
+    },
+    getPicture6: function getPicture6(state) {
+      return state.picture6;
+    },
+    getPicture7: function getPicture7(state) {
+      return state.picture7;
+    },
+    getToggleData: function getToggleData(state) {
+      return state.toggleData;
+    },
+    isDown: function isDown(state) {
+      return state.isDown;
+    },
+    getIsPrevious: function getIsPrevious(state) {
+      return state.isPrevious;
+    },
+    getTopSlide: function getTopSlide(state) {
+      return state.topSlide;
+    },
+    getPictureNum: function getPictureNum(state) {
+      return function (slideNum) {
+        return state.slideReel.getNum(slideNum);
+      };
+    }
+  }, _defineProperty(_getters, "getTopSlide", function getTopSlide(state) {
+    return state.topSlide;
+  }), _defineProperty(_getters, "getHead", function getHead(state) {
+    return state.head;
+  }), _getters)
+}));
 
 /***/ }),
 
