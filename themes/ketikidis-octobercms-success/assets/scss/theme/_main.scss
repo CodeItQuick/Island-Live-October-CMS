@@ -255,8 +255,7 @@ button {
     width: 100%;
     height: 80vh;
     position: relative;
-    //colors at: http://materialuicolors.co/?utm_source=launchers
-    background: linear-gradient(to right, rgba(36, 37, 42, 0.90), rgba(36, 37, 42, 0.90)), url(../images/Symphony.jpg);
+    //colors at: http://materialuicolors.co/?utm_source=launchers"
     background-size: 100% 80vh;
     backface-visibility: hidden;
     transition: all linear 1s;
@@ -276,7 +275,7 @@ button {
         top: -20%;
 
         &rotatedown {
-            animation: cardslidedown linear .9s;
+            animation: cardslidedown linear .2s;
             height: 140%;
             left: 0rem;
             width: 30%;
@@ -314,7 +313,7 @@ button {
         }
 
         &rotateup {
-            animation: cardslideup linear 1s;
+            animation: cardslideup linear .2s;
             height: 140%;
             left: 0rem;
             width: 30%;
@@ -429,7 +428,6 @@ button {
                 transform: translateX(-50%);
                 top: 0%;
                 left: 50%;
-                width: 80%;
                 height: 100%;
             }
         }
@@ -458,15 +456,13 @@ button {
                 border-top-right-radius: 0;
                 border: 2px solid white;
                 opacity: 1;
-                transition: all translate(-50%, -50%) 1s ease;
                 position: relative;
 
                 &-prev {
                     color: inherit;
-                    flex-flow: unset;
-                    position: absolute;
-                    top: 35%;
-                    left: 45%;
+                    display: flex;
+                    top: 90%;
+                    left: 50%;
                 }
             }
 
@@ -498,17 +494,22 @@ button {
     transform: translate(-50%, -50%);
     top: -50%;
     left: 50%;
-    width: 40%;
     height: 80%;
-    animation: previousslideup 1s;
+    animation: previousslideup .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @keyframes previousslideup {
     0% {
         top: 0%;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75;
     }
     100% {
         top: -150%;
+        opacity: 0;
+        background: rgba(white, 0);
     }
 }
 
@@ -517,18 +518,22 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 40%;
     height: 80%;
-    animation: previousslidedown 1.1s;
+    animation: previousslidedown .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @keyframes previousslidedown {
     0% {
         top: 150%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.25;
     }
 
     100% {
         top: 0%;
+        opacity: 1;
     }
 }
 .nextslideup {
@@ -536,18 +541,22 @@ button {
     transform: translate(-50%, -50%);
     top: -50%;
     left: 50%;
-    width: 40%;
     height: 80%;
-    animation: nextslideup 1.1s;
+    animation: nextslideup .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @keyframes nextslideup {
     0% {
         top: -150%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.25;
     }
 
     100% {
         top: 0%;
+        opacity: 1;
     }
 }
 
@@ -556,41 +565,26 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 40%;
     height: 80%;
-    animation: nextslidedown 1.1s;
+    animation: nextslidedown .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @keyframes nextslidedown {
     0% {
         top: 0%;
+        opacity: 1;
     }
-
+    50% {
+        opacity: 0.75;
+    }
     100% {
         top: 150%;
+        background: rgba(white, 0);
+        opacity: 0;
     }
 }
 
 
-#slidedownmenu {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 40%;
-    height: 80%;
-    animation: slidedownmenu 1.1s;
-}
-
-@keyframes slidedownmenu {
-    0% {
-        top: 150%;
-    }
-
-    100% {
-        top: 0%;
-    }
-}
     /*
     .carousel-inner {
         .active {

@@ -8,7 +8,6 @@ import ImageMenu from './components/imageMenu.vue'
 import VuexStore from './vuexStore.js'
 
 Vue.prototype.$eventhub = new Vue();
-var sidebarList = new CircularDoublyLinkedList();
 
 var settings = {
     el: "#menu",
@@ -25,15 +24,16 @@ var settings = {
         },
         newimgvalue: Number,
         src: String,
-        loadData: String
+        loadintovuex: String,
+        backgroundimg: ''
     },
 
     data: {
-        data: 'initial',
         index: 0,
         dataimgvalue: String,
         toggledata: false,
-        toggledatamenu: false
+        toggledatamenu: false,
+        backgroundimg: ''
         },
 
     methods: {
@@ -48,27 +48,32 @@ var settings = {
                 return VuexStore.getters.getPicture4;
             }
         },
-        setPicture: function (newImage) {
-            VuexStore.commit('addPicture', newImage)
+        setPicture: function (newImage, newTitle, newSubtitle) {
+            VuexStore.commit('addPicture', {
+                'newImage': newImage,
+                'newTitle': newTitle,
+                'newSubtitle': newSubtitle
+            })
+        },
+        getBackground: function (backgroundImage) {
+            return "background-image: linear-gradient(to right, rgba(36, 37, 42, 0.90), rgba(36, 37, 42, 0.90))," +
+                    backgroundImage + ";";
         }
     },
         
     created() {
-
-            this.$eventhub.$on('dataimgvalue'), function (dataimgvalue) {
-                console.log("image updated");
-                Vue.set(sidebarList.get(this.index), 'dataimgvalue', dataimgvalue);
-            },
+        
                 this.$eventhub.$on('previous', function () {
 
+                // Set the VuexStore event previous to true, and toggle the classes for slide in/out
                 VuexStore.commit('setPrevious');
                 VuexStore.commit('setToggle');
 
                 setTimeout(function () {
                     VuexStore.commit('setDown');
                     VuexStore.commit('setToggle');
-                    VuexStore.commit('decreaseTopSlide');
-                }, 1000);
+                    VuexStore.commit('decreaseTopSlide'); //Decrease the top slide so that the change sticks
+                }, 199);
 
             }),
                 this.$eventhub.$on('next', function () {
@@ -79,7 +84,7 @@ var settings = {
                     VuexStore.commit('setUp');
                     VuexStore.commit('setToggle');
                     VuexStore.commit('increaseTopSlide');
-                    }, 1000);
+                    }, 199);
 
             })
     }

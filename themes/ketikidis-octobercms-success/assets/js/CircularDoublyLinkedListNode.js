@@ -2,19 +2,20 @@ import Vue from 'vue'
 
 export default class CircularDoublyLinkedListNode {
     
-    constructor(newVueInstance) {
-        this.vueInstance = newVueInstance;
+    constructor(newImage, newTitle, newSubtitle) {
+        this.displayImage = newImage;
+        this.displayTitle = newTitle;
+        this.displaySubtitle = newSubtitle;
         this.pictureNum = null;
-        
+        this.next = null;
+        this.previous = null;
     }
 
-    setVueInstance(newVueInstance) {
-        this.vueInstance = newVueInstance;
-    }
+    setDisplayImage(newImage) { this.displayImage = newImage; }
 
-    setPictureNum(pictureNum) {
-        this.pictureNum = pictureNum;
-    }
+    setDisplayTitle(newTitle) { this.displayTitle = newTitle; }
+
+    setDisplaySubTitle(newSubTitle) { this.displaySubTitle = newSubTitle; }
 
     setPrevious(previous) {
         this.previous = previous;
@@ -24,12 +25,16 @@ export default class CircularDoublyLinkedListNode {
         this.next = next;
     }
     
-    getVueInstance() {
-        return this.vueInstance;
+    getDisplayImage() {
+        return this.displayImage;
     }
-
-    getPictureNum() {
-        return this.pictureNum;
+    
+    getDisplayTitle() {
+        return this.displayTitle;
+    }
+    
+    getDisplaySubTitle() {
+        return this.displaySubtitle;
     }
 
     getPrevious() {

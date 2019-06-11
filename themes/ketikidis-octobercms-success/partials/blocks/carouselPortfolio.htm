@@ -2,16 +2,19 @@ description = "Carousel Portfolio Section"
 
 [viewBag]
 ==
-<div class="carouselPortfolio" refs="parent" id="menu">
-     
+<div class="carouselPortfolio" refs="parent" id="menu" style="background: linear-gradient(to right, rgba(36, 37, 42, 0.90), rgba(36, 37, 42, 0.90)), url({{data.section_carousel[0].section_carousel_image|media}});">
       {% for fields in data.section_carousel %}
-      <div class="loadData" :loadIntoVuex="setPicture('{{fields.section_carousel_image|media}}')" >
-</div>
-    {% endfor %}
-        <image-menu parentclass="carouselPortfolio__menu--card{{loop.index0}}"
-                    parentindex="{{loop.Index0}}"
-                    parentimgclassvalue="carouselPortfolio__menu--card{{loop.index0}}--picture-{{loop.index0}}"
-                    parenttextclassvalue="carouselPortfolio__menu--card{{loop.index0}}--text">
+      <div class="loadData" ref="loaddata" v-if="{{loop.index0}} != 0"
+           :loadintovuex="setPicture('{{fields.section_carousel_image|media}}',
+           '{{fields.section_carousel_title}}',
+           '{{fields.section_carousel_subtitle}}')">
+      </div>
+        {% endfor %}
+        
+        <image-menu parentclass="carouselPortfolio__menu--card"
+                    parentindex=""
+                    parentimgclassvalue="carouselPortfolio__menu--card--picture"
+                    parenttextclassvalue="carouselPortfolio__menu--card--text">
             
         </image-menu>
     <div class="carouselPortfolio__display">
@@ -21,9 +24,7 @@ description = "Carousel Portfolio Section"
 
 
         </previous-button>
-        <display-image :displayimg="getImageValue()"
-                       :displayimgincoming="getImageValueIncoming()"
-                       gettoggle="gettoggle">
+        <display-image>
 
         </display-image>
 

@@ -2,7 +2,7 @@
 
     <div class="carouselPortfolio__display--picture">
         <div class="carouselPortfolio__display--picture-1">
-            <img :src="incomingSlide(true)" :class="getCompToggle(true, getIsPrevious())" />
+            <img :src="incomingSlide(true)" :class="getCompToggle(true, getIsPrevious())" v-if="getToggle()"/>
             <img :src="incomingSlide(false)" :class="getCompToggle(false, getIsPrevious())" />
         </div>
     </div>
@@ -11,13 +11,6 @@
     import VuexStore from '../vuexStore.js'
     export default {
         name: "display-image",
-        props: {
-            displayimg: String,
-            displayimgincoming: String 
-        },
-        data: function () {
-            return { displayimg, displayimgincoming };
-        },
         methods: {
             getPicture: function (pictureNum) {
                 if (pictureNum == 0) {
@@ -38,8 +31,14 @@
                 else if (pictureNum == 5) {
                     return VuexStore.getters.getPicture5
                 }
+                else if (pictureNum == 6) {
+                    return VuexStore.getters.getPicture6
+                }
+                else if (pictureNum == 7) {
+                    return VuexStore.getters.getPicture7
+                }
                 else {
-                    return displayimg;
+                    return VuexStore.getters.getPicture0
                 }
             },
             getCompToggle: function (isDown, isPrevious) {
@@ -98,24 +97,20 @@
             incomingSlide: function (isCurrent) {
                 if (isCurrent) {
                     if (this.getIsPrevious()) {
-                        return this.getPicture(5);
+                        return this.getPicture(4);
                     }
                     else {
-                        return this.getPicture(3);
+                        return this.getPicture(2);
                     }
                 } else
                 if (this.getIsPrevious()) {
-                    return this.getPicture(4);
+                    return this.getPicture(3);
                 }
                 else {
-                    return this.getPicture(4);
+                    return this.getPicture(3);
                 }
             }
 
         }
     }
 </script>
-
-<style>
-
-</style>

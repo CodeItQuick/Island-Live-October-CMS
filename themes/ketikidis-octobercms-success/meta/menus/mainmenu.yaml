@@ -17,8 +17,10 @@ items:
         title: About
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: pages-abous-us-2
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '1'
@@ -37,6 +39,42 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: Sports
+                nesting: ''
+                type: url
+                url: /sports
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Music
+                nesting: ''
+                type: url
+                url: /music
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Entertainment
+                type: url
+                url: /entertainment
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Blog
         nesting: ''

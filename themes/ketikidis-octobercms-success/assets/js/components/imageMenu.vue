@@ -1,13 +1,13 @@
 <template>
     <div :class="rotateClass(upOrDown(isPrevious(), getToggleData()))" id="#cardmenu">
-        <div v-for="cardsIndex in 7" :class="currentClass(parentclass, false)">
+        <div v-for="indexcard in 7" :class="currentClass(parentclass, false)">
             <main-content :cardClass="currentClass(parentclass, false)"
-                            :cardIndex="cardsIndex"
-                            :compimgdata="getPicture(cardsIndex)"
+                            :cardIndex="indexcard"
+                            :compimgdata="getPicture(indexcard)"
                             :cardimgclassvalue="currentClass(parentclass, false) + currentClass('--picture', false)"
                             :cardtextclassvalue="currentClass(parentclass, false) + '--text'"
-                            h6value="Photo Title"
-                            pvalue="Description of the photo"
+                            :h6value="getTitle(indexcard)"
+                            :pvalue="getSubTitle(indexcard)"
                             ref="child">
             </main-content>
         </div>
@@ -38,9 +38,6 @@
             return { dataimgvalue: String }
         },
         methods: {
-            nextImage: function () {
-                this.$eventhub.$emit("next");
-            },
             currentClass: function (concatString, firstElement) {
                 
                 var suffix = "";
@@ -54,6 +51,12 @@
             },
             getToggleData: function () {
                 return VuexStore.getters.getToggleData;
+            },
+            getTitle: function (slideNum) {
+                return VuexStore.getters.getTitle(slideNum - 1);
+            },
+            getSubTitle: function (slideNum) {
+                return VuexStore.getters.getSubTitle(slideNum - 1);
             },
             rotateClass: function (isRotated) {
                 if (isRotated == "Down") {
@@ -80,7 +83,7 @@
                 return VuexStore.getters.getIsPrevious;
             },
             getPicture: function (pictureNum) {
-                return VuexStore.getters.getPicture(pictureNum);
+                return VuexStore.getters.getPicture(pictureNum - 1);
             },
         }
     }

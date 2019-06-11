@@ -15,7 +15,6 @@ export default new Vuex.Store ({
         picture4: "no picture 4",
         picture5: "no picture 5",
         picture6: "no picture 6",
-        picture7: "no picture 7",
         toggleData: false,
         isDown: true,
         isPrevious: false,
@@ -24,8 +23,18 @@ export default new Vuex.Store ({
         head: null
     },
     mutations: {
-        addPicture(state, pictureAddress) {
-            state.slideReel.addNode(pictureAddress);
+        addPicture(state, { newImage, newTitle, newSubtitle }) {
+
+            console.log(newImage, newTitle, newSubtitle);
+
+            state.slideReel.addNode(newImage, newTitle, newSubtitle);
+            state.picture0 = state.slideReel.get(0).getDisplayImage();
+            state.picture1 = state.slideReel.get(1).getDisplayImage();
+            state.picture2 = state.slideReel.get(2).getDisplayImage();
+            state.picture3 = state.slideReel.get(3).getDisplayImage();
+            state.picture4 = state.slideReel.get(4).getDisplayImage();
+            state.picture5 = state.slideReel.get(5).getDisplayImage();
+            state.picture6 = state.slideReel.get(6).getDisplayImage();
         },
         
         setToggle(state) {
@@ -45,27 +54,25 @@ export default new Vuex.Store ({
         },
         increaseTopSlide(state) {
             state.slideReel.reverseRotate();
-            state.picture0 = state.slideReel.get(0);
-            state.picture1 = state.slideReel.get(1);
-            state.picture2 = state.slideReel.get(2);
-            state.picture3 = state.slideReel.get(3);
-            state.picture4 = state.slideReel.get(4);
-            state.picture5 = state.slideReel.get(5);
-            state.picture6 = state.slideReel.get(6);
-            state.picture7 = state.slideReel.get(7);
+            state.picture0 = state.slideReel.get(0).getDisplayImage();
+            state.picture1 = state.slideReel.get(1).getDisplayImage();
+            state.picture2 = state.slideReel.get(2).getDisplayImage();
+            state.picture3 = state.slideReel.get(3).getDisplayImage();
+            state.picture4 = state.slideReel.get(4).getDisplayImage();
+            state.picture5 = state.slideReel.get(5).getDisplayImage();
+            state.picture6 = state.slideReel.get(6).getDisplayImage();
             //state.topSlide = state.topSlide + 1;
             
         },
         decreaseTopSlide(state) {
             state.slideReel.rotate();
-            state.picture0 = state.slideReel.get(0);
-            state.picture1 = state.slideReel.get(1);
-            state.picture2 = state.slideReel.get(2);
-            state.picture3 = state.slideReel.get(3);
-            state.picture4 = state.slideReel.get(4);
-            state.picture5 = state.slideReel.get(5);
-            state.picture6 = state.slideReel.get(6);
-            state.picture7 = state.slideReel.get(7);
+            state.picture0 = state.slideReel.get(0).getDisplayImage();
+            state.picture1 = state.slideReel.get(1).getDisplayImage();
+            state.picture2 = state.slideReel.get(2).getDisplayImage();
+            state.picture3 = state.slideReel.get(3).getDisplayImage();
+            state.picture4 = state.slideReel.get(4).getDisplayImage();
+            state.picture5 = state.slideReel.get(5).getDisplayImage();
+            state.picture6 = state.slideReel.get(6).getDisplayImage();
             //state.topSlide = state.topSlide - 1;
 
         },
@@ -76,8 +83,10 @@ export default new Vuex.Store ({
     },
 
     actions: {
-        addPicture(context, pictureAddress) {
-            context.commit('addPicture', pictureAddress);
+        addPicture(context, pictureInfo) {
+
+            console.log(pictureInfo);
+            context.commit('addPicture', pictureInfo);
         },
         setToggle(context) {
             context.commit('setToggle');
@@ -109,7 +118,21 @@ export default new Vuex.Store ({
     },
     getters: {
         getPicture: (state) => (slideNum) => {
-            return state.slideReel.get(slideNum);
+            if (slideNum == 0) {
+                return state.picture0;
+            } else if(slideNum == 1) {
+                return state.picture1;
+            } else if (slideNum == 2) {
+                return state.picture2;
+            } else if (slideNum == 3) {
+                return state.picture3;
+            } else if (slideNum == 4) {
+                return state.picture4;
+            } else if (slideNum == 5) {
+                return state.picture5;
+            } else if (slideNum == 6) {
+                return state.picture6;
+            } 
         },
         getPicture0: (state) => {
             return state.picture0;
@@ -132,9 +155,6 @@ export default new Vuex.Store ({
         getPicture6: (state) => {
             return state.picture6;
         },
-        getPicture7: (state) => {
-            return state.picture7;
-        },
         getToggleData: state => {
             return state.toggleData;
         },
@@ -155,6 +175,12 @@ export default new Vuex.Store ({
         },
         getHead: state => {
             return state.head;
+        },
+        getTitle: (state) => (slideNum) => {
+            return state.slideReel.get(slideNum).getDisplayTitle();
+        },
+        getSubTitle: (state) => (slideNum) => {
+            return state.slideReel.get(slideNum).getDisplaySubTitle();
         }
 
     }
