@@ -250,6 +250,7 @@ button {
 	}
 }
 
+
 .carouselPortfolio {
     display: flex;
     width: 100%;
@@ -260,8 +261,6 @@ button {
     backface-visibility: hidden;
     transition: all linear 1s;
     overflow: hidden;
-
-
 
     &__menu {
         height: 140%;
@@ -274,6 +273,10 @@ button {
         overflow: hidden;
         top: -20%;
 
+        @media screen and (max-width: 992px) {
+            display: none;
+        }
+
         &rotatedown {
             animation: cardslidedown linear .2s;
             height: 140%;
@@ -284,6 +287,11 @@ button {
             position: absolute;
             align-content: center;
             overflow: hidden;
+
+            @media screen and (max-width: 992px) {
+                animation: none;
+                display: none;
+            }
         }
 
         @keyframes cardslidedown {
@@ -322,6 +330,12 @@ button {
             position: absolute;
             align-content: center;
             overflow: hidden;
+
+
+            @media screen and (max-width: 992px) {
+                animation: none;
+                display: none;
+            }
         }
 
         @keyframes cardslideup {
@@ -363,6 +377,7 @@ button {
             align-content: center;
             justify-content: center;
 
+
             &--picture {
                 width: 40%;
                 height: 70%;
@@ -402,13 +417,16 @@ button {
 
     &__display {
         display: flex;
-        flex: 1 1 100%;
         flex-flow: column;
+        width: 50vh;
         height: 100%;
-        width: 70%;
         position: absolute;
         left: 30%;
         top: 0%;
+
+        @media screen and (max-width: 992px) {
+            left: 0%;
+        }
 
 
         &--picture {
@@ -417,7 +435,6 @@ button {
             flex: 0 1 100%;
             align-content: center;
             justify-content: center;
-            height: 100%;
             width: 100%;
             margin-top: 3%;
             margin-bottom: 4%;

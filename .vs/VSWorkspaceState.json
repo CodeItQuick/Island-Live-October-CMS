@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\dist",
-    "\\laradock",
     "\\themes",
     "\\themes\\ketikidis-octobercms-success",
     "\\themes\\ketikidis-octobercms-success\\assets",
     "\\themes\\ketikidis-octobercms-success\\assets\\css",
-    "\\themes\\ketikidis-octobercms-success\\assets\\js",
-    "\\themes\\ketikidis-octobercms-success\\assets\\js\\components"
+    "\\themes\\ketikidis-octobercms-success\\assets\\scss",
+    "\\themes\\ketikidis-octobercms-success\\assets\\scss\\theme",
+    "\\themes\\ketikidis-octobercms-success\\partials",
+    "\\themes\\ketikidis-octobercms-success\\partials\\blocks"
   ],
+  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\assets\\js\\CircularDoublyLinkedList.js",
   "PreviewInSolutionExplorer": false
 }
