@@ -321,7 +321,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "display-image",
@@ -351,29 +350,29 @@ __webpack_require__.r(__webpack_exports__);
       if (isPrevious) {
         if (isDown) {
           if (this.getToggle()) {
-            return 'previousslidedown';
+            return 'carouselPortfolio__display--picture-1 previousslidedown';
           } else {
-            return 'none';
+            return 'carouselPortfolio__display--picture-1';
           }
         } else if (!isDown) {
           if (this.getToggle()) {
-            return 'previousslideup';
+            return 'carouselPortfolio__display--picture-1 previousslideup';
           } else {
-            return 'none';
+            return 'carouselPortfolio__display--picture-1';
           }
         }
       } else if (!isPrevious) {
         if (isDown) {
           if (this.getToggle()) {
-            return 'nextslideup';
+            return 'carouselPortfolio__display--picture-1 nextslideup';
           } else {
-            return 'none';
+            return 'carouselPortfolio__display--picture-1';
           }
         } else if (!isDown) {
           if (this.getToggle()) {
-            return 'nextslidedown';
+            return 'carouselPortfolio__display--picture-1 nextslidedown';
           } else {
-            return 'none';
+            return 'carouselPortfolio__display--picture-1';
           }
         }
       }
@@ -5028,19 +5027,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "carouselPortfolio__display--picture" }, [
-    _c("div", { staticClass: "carouselPortfolio__display--picture-1" }, [
-      _vm.getToggle()
-        ? _c("img", {
-            class: _vm.getCompToggle(true, _vm.getIsPrevious()),
-            attrs: { src: _vm.incomingSlide(true) }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("img", {
-        class: _vm.getCompToggle(false, _vm.getIsPrevious()),
-        attrs: { src: _vm.incomingSlide(false) }
-      })
-    ])
+    _vm.getToggle()
+      ? _c("img", {
+          class: _vm.getCompToggle(true, _vm.getIsPrevious()),
+          attrs: { src: _vm.incomingSlide(true) }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    _c("img", {
+      class: _vm.getCompToggle(false, _vm.getIsPrevious()),
+      attrs: { src: _vm.incomingSlide(false) }
+    })
   ])
 }
 var staticRenderFns = []

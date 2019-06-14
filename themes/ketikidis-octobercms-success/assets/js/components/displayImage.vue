@@ -1,10 +1,9 @@
 <template>
-
     <div class="carouselPortfolio__display--picture">
-        <div class="carouselPortfolio__display--picture-1">
+        
             <img :src="incomingSlide(true)" :class="getCompToggle(true, getIsPrevious())" v-if="getToggle()"/>
             <img :src="incomingSlide(false)" :class="getCompToggle(false, getIsPrevious())" />
-        </div>
+        
     </div>
 </template>
 <script>
@@ -45,36 +44,36 @@
                 if (isPrevious) {
                     if (isDown) {
                         if (this.getToggle()) {
-                            return 'previousslidedown';
+                            return 'carouselPortfolio__display--picture-1 previousslidedown';
                         }
                         else {
-                            return 'none';
+                            return 'carouselPortfolio__display--picture-1';
                         }
                     }
                     else if (!isDown) {
                         if (this.getToggle()) {
-                            return 'previousslideup';
+                            return 'carouselPortfolio__display--picture-1 previousslideup';
                         }
                         else {
-                            return 'none';
+                            return 'carouselPortfolio__display--picture-1';
                         }
                     }
                 }
                 else if(!isPrevious) {
                     if (isDown) {
                         if (this.getToggle()) {
-                            return 'nextslideup';
+                            return 'carouselPortfolio__display--picture-1 nextslideup';
                         }
                         else {
-                            return 'none';
+                            return 'carouselPortfolio__display--picture-1';
                         }
                     }
                     else if (!isDown) {
                         if (this.getToggle()) {
-                            return 'nextslidedown';
+                            return 'carouselPortfolio__display--picture-1 nextslidedown';
                         }
                         else {
-                            return 'none';
+                            return 'carouselPortfolio__display--picture-1';
                         }
                     }
                 }
