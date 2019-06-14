@@ -273,7 +273,7 @@ button {
         overflow: hidden;
         top: -20%;
 
-        @media screen and (max-width: 992px) {
+        @media screen and (max-width: 1048px) {
             display: none;
         }
 
@@ -288,7 +288,7 @@ button {
             align-content: center;
             overflow: hidden;
 
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 1048px) {
                 animation: none;
                 display: none;
             }
@@ -332,7 +332,7 @@ button {
             overflow: hidden;
 
 
-            @media screen and (max-width: 992px) {
+            @media screen and (max-width: 1048px) {
                 animation: none;
                 display: none;
             }
@@ -418,14 +418,18 @@ button {
     &__display {
         display: flex;
         flex-flow: column;
-        width: 50vh;
+        width: 70%;
         height: 100%;
         position: absolute;
         left: 30%;
         top: 0%;
 
-        @media screen and (max-width: 992px) {
-            left: 0%;
+        @media screen and (max-width: 1048px) {
+            display: flex;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
         }
 
 
