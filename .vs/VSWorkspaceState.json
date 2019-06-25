@@ -6,11 +6,11 @@
     "\\themes\\ketikidis-octobercms-success",
     "\\themes\\ketikidis-octobercms-success\\assets",
     "\\themes\\ketikidis-octobercms-success\\assets\\css",
+    "\\themes\\ketikidis-octobercms-success\\assets\\js",
+    "\\themes\\ketikidis-octobercms-success\\assets\\js\\components",
     "\\themes\\ketikidis-octobercms-success\\assets\\scss",
-    "\\themes\\ketikidis-octobercms-success\\assets\\scss\\theme",
-    "\\themes\\ketikidis-octobercms-success\\partials",
-    "\\themes\\ketikidis-octobercms-success\\partials\\blocks"
+    "\\themes\\ketikidis-octobercms-success\\assets\\scss\\theme"
   ],
-  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\assets\\js\\CircularDoublyLinkedList.js",
+  "SelectedNode": "\\themes\\ketikidis-octobercms-success\\assets\\js\\components\\displayImage.vue",
   "PreviewInSolutionExplorer": false
 }
